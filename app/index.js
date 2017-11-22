@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter, Route, Switch} from 'react-router-dom';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+import createBrowserHistory from 'history/createBrowserHistory';
 
 let history = createBrowserHistory();
 
