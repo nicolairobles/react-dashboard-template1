@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter, Route, Switch} from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
+import {createBrowserHistory} from 'history';
 
-let history = createBrowserHistory();
 
 // Styles
 // Import Font Awesome Icons Set
@@ -25,7 +24,7 @@ import Page404 from './views/Pages/Page404/'
 import Page500 from './views/Pages/Page500/'
 
 ReactDOM.render((
-  <HashRouter history={history}>
+  <HashRouter>
     <Switch>
       <Route exact path="/login" name="Login Page" component={Login}/>
       <Route exact path="/register" name="Register Page" component={Register}/>

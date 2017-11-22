@@ -27,7 +27,7 @@ import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
 class Full extends Component {
   render() {
     return (
-      <div  history={this.props.history} className="app">
+      <div className="app">
         <Header />
         <div className="app-body">
           <Sidebar {...this.props}/>
