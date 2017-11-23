@@ -1,15 +1,17 @@
 ### Initial dependencies
 - Node 6.5.0
 - MongoDB 3.2.9
+  - start mondodb
+    - `mongod --config /usr/local/etc/mongod.conf` (MacOSX method or equivalent way of starting mongodb on your system)
 - Webpack 3.8.1
 
 ### To Install
 - Install npm packages
   - `npm install`
-- start mondodb
-  - `mongod --config /usr/local/etc/mongod.conf` (or equivalent way of starting mongodb on your system)
 - run webpack to build front-end
   - `webpack`
+- start server
+  - `npm start`
 
 ### General Explanation
 To initially create the front-end we use Webpack to compile all JS, CSS, HTML, and fonts into the `public` directory.
