@@ -34,8 +34,7 @@ bower_components
 .DS_Store
 
 # Compiled files
-public/css/*
-public/js/*
+dist/*
 
 # implementation test folder
 implementation-test
