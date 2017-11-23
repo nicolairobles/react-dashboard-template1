@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('[name].fonts.css');
 const extractSCSS = new ExtractTextPlugin('[name].styles.css');
 
-const BUILD_DIR = path.resolve(__dirname, 'public');
+const BUILD_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'app');
 
 console.log('BUILD_DIR', BUILD_DIR);
@@ -55,7 +55,7 @@ module.exports = (env = {}) => {
             use: [
               {
                 loader: 'css-loader',
-                options: {alias: {'../img': '../public/img'}}
+                options: {alias: {'../img': '../img'}}
               },
               {
                 loader: 'sass-loader'
@@ -99,7 +99,7 @@ module.exports = (env = {}) => {
       new HtmlWebpackPlugin(
         {
           inject: true,
-          template: './views/index.html'
+          template: './public/views/index.html'
         }
       ),
       new CopyWebpackPlugin([
