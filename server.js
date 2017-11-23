@@ -9,7 +9,7 @@ var Router = require('react-router').matchPath;
 var mongoose = require('mongoose');
 var Character = require('./models/character');
 var config = require('./config');
-var routes = require('./app/routes');
+var routes = require('./public/app/routes');
 
 var express = require('express');
 var path = require('path');

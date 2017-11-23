@@ -3,15 +3,20 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+var CleanObsoleteChunks = require('webpack-clean-obsolete-chunks');
+require("shelljs/global");
 
 const extractCSS = new ExtractTextPlugin('[name].fonts.css');
 const extractSCSS = new ExtractTextPlugin('[name].styles.css');
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
-const SRC_DIR = path.resolve(__dirname, 'app');
+const SRC_DIR = path.resolve(__dirname, 'public/app');
 
 console.log('BUILD_DIR', BUILD_DIR);
 console.log('SRC_DIR', SRC_DIR);
+
+// clean dist folder
+rm("-rf", "dist");
 
 module.exports = (env = {}) => {
   return {
@@ -92,6 +97,15 @@ module.exports = (env = {}) => {
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
+      new CleanObsoleteChunks({
+        // Write logs to console.
+        // Default: true
+        verbose: true,
+
+        // Clean obsolete chunks of webpack child compilations.
+        // Default: false
+        deep: true
+      }),
       new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
       new webpack.NamedModulesPlugin(),
       extractCSS,

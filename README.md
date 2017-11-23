@@ -8,10 +8,21 @@
 ### To Install
 - Install npm packages
   - `npm install`
-- run webpack to build front-end
-  - `webpack`
+
+### Development
+Webpack will recompile when changes are made and node will watch for any recompiling and will restart automatically
+- run webpack to build dev front-end
+  - `npm run dev`
+- start server and watch for updates
+  - `npm run watch`
+
+### Production
+Webpack will clear out `dist` directory and build the production-ready front-end and `npm start` will start the server
+- run webpack to build production front-end
+  - `npm run build`
 - start server
   - `npm start`
+
 
 ### General Explanation
 To initially create the front-end we use Webpack to compile all JS, CSS, HTML, and fonts from the `public` and `app` directories into the `dist` directory.

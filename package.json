@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "dev": "webpack -d --progress --watch --profile --json > compilation-stats.json --env.dev"
+    "dev": "webpack -d --progress --watch --profile --json > compilation-stats.json --env.dev",
+    "build": "webpack -p --progress --env.prod"
   },
   "babel": {
     "presets": [
@@ -32,6 +33,7 @@
     "font-awesome": "^4.7.0",
     "history": "^1.13.0",
     "html-loader": "^0.5.1",
+    "jquery": "^3.2.1",
     "mongoose": "^4.2.5",
     "morgan": "^1.6.1",
     "react": "^15.5.4",
@@ -42,9 +44,11 @@
     "react-transition-group": "^2.2.1",
     "reactstrap": "^5.0.0-alpha.3",
     "request": "^2.65.0",
+    "shelljs": "^0.7.8",
     "simple-line-icons": "^2.4.1",
     "swig": "^1.4.2",
     "underscore": "^1.8.3",
+    "webpack-clean-obsolete-chunks": "^0.3.0",
     "xml2js": "^0.4.15"
   },
   "devDependencies": {
